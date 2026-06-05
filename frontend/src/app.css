@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+	--color-FuelRetail-red: #EF4444;
+	--color-FuelRetail-orange: #F97316;
+	--color-FuelRetail-dark: #0F172A;
+	--color-FuelRetail-slate: #1E293B;
+	--color-FuelRetail-charcoal: #0D1117;
+
+	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+@layer base {
+	body {
+		font-family: var(--font-sans);
+	}
+	::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+	}
+	::-webkit-scrollbar-track {
+		background: #0f172a;
+	}
+	::-webkit-scrollbar-thumb {
+		background: #334155;
+		border-radius: 3px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #475569;
+	}
+}
+
+@utility card {
+	background-color: var(--color-FuelRetail-slate);
+	border-radius: 0.75rem;
+	border: 1px solid rgb(55 65 81 / 0.5);
+	padding: 1rem;
+}
+
+@utility card-hover {
+	background-color: var(--color-FuelRetail-slate);
+	border-radius: 0.75rem;
+	border: 1px solid rgb(55 65 81 / 0.5);
+	padding: 1rem;
+	transition: all 200ms;
+	&:hover {
+		border-color: rgb(239 68 68 / 0.4);
+		box-shadow: 0 10px 15px -3px rgb(239 68 68 / 0.05);
+	}
+}
+
+@utility btn-red {
+	padding: 0.5rem 1rem;
+	background-color: var(--color-FuelRetail-red);
+	color: white;
+	border-radius: 0.5rem;
+	font-weight: 500;
+	transition: all 150ms;
+	&:hover {
+		background-color: rgb(239 68 68 / 0.8);
+	}
+	&:active {
+		scale: 0.95;
+	}
+}
+
+@utility btn-ghost {
+	padding: 0.5rem 1rem;
+	color: rgb(209 213 219);
+	border-radius: 0.5rem;
+	font-weight: 500;
+	transition: all 150ms;
+	&:hover {
+		background-color: rgb(255 255 255 / 0.05);
+	}
+	&:active {
+		scale: 0.95;
+	}
+}
+
+@utility badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.125rem 0.5rem;
+	border-radius: 9999px;
+	font-size: 0.75rem;
+	font-weight: 500;
+}
+
+@utility mql-code {
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	background-color: rgb(17 24 39);
+	color: rgb(74 222 128);
+	padding: 0.75rem;
+	border-radius: 0.5rem;
+	overflow: auto;
+}
+
+@keyframes slide-in-right {
+	from { transform: translateX(100%); }
+	to { transform: translateX(0); }
+}
+
+@keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.animate-slide-in-right {
+	animation: slide-in-right 0.25s ease-out;
+}
+
+.animate-fade-in {
+	animation: fade-in 0.2s ease-out;
+}

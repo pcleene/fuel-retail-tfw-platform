@@ -1,0 +1,11 @@
+.env
+.venv/
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+*.pem
+NEXT_AGENT_PROMPT.md
+FuelRetail_MongoDB_Meeting_Summary.md
+.svelte-kit/
+build/
